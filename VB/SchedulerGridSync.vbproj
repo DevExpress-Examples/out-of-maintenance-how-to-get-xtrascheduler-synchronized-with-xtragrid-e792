@@ -17,9 +17,13 @@
     <DelaySign>false</DelaySign>
     <OutputType>WinExe</OutputType>
     <RootNamespace></RootNamespace>
-    <StartupObject></StartupObject>
+    <StartupObject>Sub Main</StartupObject>
     <FileUpgradeFlags></FileUpgradeFlags>
     <UpgradeBackupLocation></UpgradeBackupLocation>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -58,38 +62,49 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="DevExpress.Data.v7.3, Version=7.3.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1">
-      <Private>True</Private>
-      <HintPath>D:\Projects\Test_Examples\DLLs\7.3.6\DevExpress.Data.v7.3.dll</HintPath>
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Utils.v7.3, Version=7.3.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1">
-      <Private>True</Private>
-      <HintPath>D:\Projects\Test_Examples\DLLs\7.3.6\DevExpress.Utils.v7.3.dll</HintPath>
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v7.3, Version=7.3.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1">
-      <Private>True</Private>
-      <HintPath>D:\Projects\Test_Examples\DLLs\7.3.6\DevExpress.XtraEditors.v7.3.dll</HintPath>
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v7.3.Design, Version=7.3.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1">
-      <Private>True</Private>
-      <HintPath>D:\Projects\Test_Examples\DLLs\7.3.6\DevExpress.XtraEditors.v7.3.Design.dll</HintPath>
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v7.3, Version=7.3.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1">
-      <Private>True</Private>
-      <HintPath>D:\Projects\Test_Examples\DLLs\7.3.6\DevExpress.XtraGrid.v7.3.dll</HintPath>
+    <Reference Include="DevExpress.XtraEditors.v13.1.Design, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v7.3, Version=7.3.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1">
-      <Private>True</Private>
-      <HintPath>D:\Projects\Test_Examples\DLLs\7.3.6\DevExpress.XtraLayout.v7.3.dll</HintPath>
+    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v7.3, Version=7.3.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>D:\Projects\Test_Examples\DLLs\7.3.6\DevExpress.XtraScheduler.v7.3.dll</HintPath>
+    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v7.3.Core, Version=7.3.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>D:\Projects\Test_Examples\DLLs\7.3.6\DevExpress.XtraScheduler.v7.3.Core.dll</HintPath>
+    <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v13.1.Reporting.Extensions, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
