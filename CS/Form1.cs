@@ -16,7 +16,7 @@ namespace SchedulerGridSync {
     /// </summary>
 	public class Form1 : System.Windows.Forms.Form {
 		private DevExpress.XtraScheduler.SchedulerControl schedulerControl1;
-		private DevExpress.XtraScheduler.SchedulerStorage schedulerStorage1;
+		private DevExpress.XtraScheduler.SchedulerDataStorage schedulerDataStorage1;
 		private CarsDBDataSet carsDBDataSet;
 		private BindingSource carSchedulingBindingSource;
 		private SchedulerGridSync.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter carSchedulingTableAdapter;
@@ -81,7 +81,7 @@ namespace SchedulerGridSync {
 			DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
 			DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
 			this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
-			this.schedulerStorage1 = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
+			this.schedulerDataStorage1 = new DevExpress.XtraScheduler.SchedulerDataStorage(this.components);
 			this.carSchedulingBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.carsDBDataSet = new SchedulerGridSync.CarsDBDataSet();
 			this.carSchedulingTableAdapter = new SchedulerGridSync.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter();
@@ -108,7 +108,7 @@ namespace SchedulerGridSync {
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.carSchedulingBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.repImgPriority)).BeginInit();
@@ -132,8 +132,8 @@ namespace SchedulerGridSync {
 			this.schedulerControl1.Location = new System.Drawing.Point(0, 24);
 			this.schedulerControl1.Name = "schedulerControl1";
 			this.schedulerControl1.Size = new System.Drawing.Size(808, 298);
-			this.schedulerControl1.Start = new System.DateTime(2005, 7, 4, 0, 0, 0, 0);
-			this.schedulerControl1.Storage = this.schedulerStorage1;
+			this.schedulerControl1.Start = new System.DateTime(2010, 7, 11, 0, 0, 0, 0);
+			this.schedulerControl1.DataStorage = this.schedulerDataStorage1;
 			this.schedulerControl1.TabIndex = 0;
 			this.schedulerControl1.Text = "schedulerControl1";
 			this.schedulerControl1.Views.DayView.NavigationButtonVisibility = DevExpress.XtraScheduler.NavigationButtonVisibility.Never;
@@ -145,20 +145,20 @@ namespace SchedulerGridSync {
 			this.schedulerControl1.Views.WorkWeekView.NavigationButtonVisibility = DevExpress.XtraScheduler.NavigationButtonVisibility.Never;
 			this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler2);
 			// 
-			// schedulerStorage1
+			// schedulerDataStorage1
 			// 
-			this.schedulerStorage1.Appointments.DataSource = this.carSchedulingBindingSource;
-			this.schedulerStorage1.Appointments.Mappings.AllDay = "AllDay";
-			this.schedulerStorage1.Appointments.Mappings.Description = "Description";
-			this.schedulerStorage1.Appointments.Mappings.End = "EndTime";
-			this.schedulerStorage1.Appointments.Mappings.Label = "Label";
-			this.schedulerStorage1.Appointments.Mappings.Location = "Location";
-			this.schedulerStorage1.Appointments.Mappings.Start = "StartTime";
-			this.schedulerStorage1.Appointments.Mappings.Status = "Status";
-			this.schedulerStorage1.Appointments.Mappings.Subject = "Subject";
-			this.schedulerStorage1.FilterAppointment += new DevExpress.XtraScheduler.PersistentObjectCancelEventHandler(this.schedulerStorage1_FilterAppointment);
-			this.schedulerStorage1.AppointmentCollectionCleared += new System.EventHandler(this.schedulerStorage1_AppointmentCollectionCleared);
-			this.schedulerStorage1.AppointmentCollectionAutoReloading += new DevExpress.XtraScheduler.CancelListChangedEventHandler(this.schedulerStorage1_AppointmentCollectionAutoReloading);
+			this.schedulerDataStorage1.Appointments.DataSource = this.carSchedulingBindingSource;
+			this.schedulerDataStorage1.Appointments.Mappings.AllDay = "AllDay";
+			this.schedulerDataStorage1.Appointments.Mappings.Description = "Description";
+			this.schedulerDataStorage1.Appointments.Mappings.End = "EndTime";
+			this.schedulerDataStorage1.Appointments.Mappings.Label = "Label";
+			this.schedulerDataStorage1.Appointments.Mappings.Location = "Location";
+			this.schedulerDataStorage1.Appointments.Mappings.Start = "StartTime";
+			this.schedulerDataStorage1.Appointments.Mappings.Status = "Status";
+			this.schedulerDataStorage1.Appointments.Mappings.Subject = "Subject";
+			this.schedulerDataStorage1.FilterAppointment += new DevExpress.XtraScheduler.PersistentObjectCancelEventHandler(this.schedulerDataStorage1_FilterAppointment);
+			this.schedulerDataStorage1.AppointmentCollectionCleared += new System.EventHandler(this.schedulerDataStorage1_AppointmentCollectionCleared);
+			this.schedulerDataStorage1.AppointmentCollectionAutoReloading += new DevExpress.XtraScheduler.CancelListChangedEventHandler(this.schedulerDataStorage1_AppointmentCollectionAutoReloading);
 			// 
 			// carSchedulingBindingSource
 			// 
@@ -426,11 +426,12 @@ namespace SchedulerGridSync {
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.splitterControl2);
 			this.Controls.Add(this.gridControl1);
-			this.Name = "Form1";
-			this.Text = "SchedulerGridSync";
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "How to get XtraScheduler synchronized with XtraGrid";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.carSchedulingBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.repImgPriority)).EndInit();
@@ -479,18 +480,18 @@ namespace SchedulerGridSync {
 		#endregion
 
 		#region Appointment-Row Relationship
-		private void schedulerStorage1_FilterAppointment(object sender, PersistentObjectCancelEventArgs e) {
-			DataRowView rowView = (DataRowView)schedulerStorage1.GetObjectRow(e.Object);
+		private void schedulerDataStorage1_FilterAppointment(object sender, PersistentObjectCancelEventArgs e) {
+			DataRowView rowView = (DataRowView)schedulerDataStorage1.GetObjectRow(e.Object);
 			DataRow row = rowView.Row;
 
 			if (!AppointmentRowHash.ContainsKey(row))
 				AppointmentRowHash.Add(rowView.Row, e.Object);
 		}
 
-		private void schedulerStorage1_AppointmentCollectionCleared(object sender, EventArgs e) {
+		private void schedulerDataStorage1_AppointmentCollectionCleared(object sender, EventArgs e) {
 			AppointmentRowHash.Clear();
 		}
-		private void schedulerStorage1_AppointmentCollectionAutoReloading(object sender, CancelListChangedEventArgs e) {
+		private void schedulerDataStorage1_AppointmentCollectionAutoReloading(object sender, CancelListChangedEventArgs e) {
 			AppointmentRowHash.Clear();
 		}
 		protected Appointment FindAppointmentByRow(DataRow row) {
@@ -513,7 +514,7 @@ namespace SchedulerGridSync {
 			}
 		}
 		private void UpdateGridSelection(Appointment apt) {
-			DataRowView rowView = (DataRowView)apt.GetSourceObject(schedulerStorage1);
+			DataRowView rowView = (DataRowView)apt.GetSourceObject(schedulerDataStorage1);
 			int rowHandle = carsDBDataSet.CarScheduling.Rows.IndexOf(rowView.Row);
 			gridView1.SelectRow(rowHandle);
 			gridView1.MakeRowVisible(rowHandle, false);
