@@ -21,8 +21,8 @@ Namespace SchedulerGridSync
 		Private WithEvents schedulerStorage1 As DevExpress.XtraScheduler.SchedulerStorage
 		Private carsDBDataSet As CarsDBDataSet
 		Private carSchedulingBindingSource As BindingSource
-		Private carSchedulingTableAdapter As SchedulerGridSync.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter
-		Private repImgPriority As DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox
+        Private carSchedulingTableAdapter As CarsDBDataSetTableAdapters.CarSchedulingTableAdapter
+        Private repImgPriority As DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox
 		Private repSpinDuration As DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit
 		Private repImgSeverity As DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox
 		Private splitterControl2 As DevExpress.XtraEditors.SplitterControl
@@ -85,9 +85,9 @@ Namespace SchedulerGridSync
 			Me.schedulerControl1 = New DevExpress.XtraScheduler.SchedulerControl()
 			Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerStorage(Me.components)
 			Me.carSchedulingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.carsDBDataSet = New SchedulerGridSync.CarsDBDataSet()
-			Me.carSchedulingTableAdapter = New SchedulerGridSync.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter()
-			Me.repImgPriority = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
+            Me.carsDBDataSet = New CarsDBDataSet()
+            Me.carSchedulingTableAdapter = New CarsDBDataSetTableAdapters.CarSchedulingTableAdapter()
+            Me.repImgPriority = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
 			Me.repSpinDuration = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit()
 			Me.repImgSeverity = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
 			Me.splitterControl2 = New DevExpress.XtraEditors.SplitterControl()
